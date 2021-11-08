@@ -12,4 +12,4 @@ class Room extends Model
     public function projections(){
         return $this->hasMany(Projection::class);
     }
-} 
+}

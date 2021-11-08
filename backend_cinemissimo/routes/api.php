@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ProjectionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,5 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/movies', [MovieController::class, 'list']);
+Route::get('/movies/{id}', [MovieController::class, 'detail']);
+Route::get('/movies/schedule/{id}', [ProjectionController::class, 'movieSchedule']);
 
 
