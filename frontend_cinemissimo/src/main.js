@@ -11,6 +11,10 @@ Vue.config.productionTip = false
 
 const routes = [
   {
+    path: '',
+    redirect: '/home'
+  },
+  {
     path: '/home',
     name: 'home',
     component: Home 

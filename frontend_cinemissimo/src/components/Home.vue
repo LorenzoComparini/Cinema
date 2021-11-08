@@ -1,6 +1,6 @@
 <template>
-    <div>
-        a
+    <div class="h-full w-full">
+        
     </div>
 </template>
 
