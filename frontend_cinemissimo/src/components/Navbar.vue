@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-row bg-black w-full items-center px-10 py-7">
+  <div class="flex flex-row bg-rosso w-full items-center px-10 py-7">
       <div class="flex flex-col">
-          <p class="text-5xl text-white">Cinema</p>
+          <p class="text-5xl text-bianco">Cinema</p>
       </div>
       <div class="flex flex-col flex-grow"></div>
       <div class="flex flex-col">
           <div class="flex flex-row">
-              <router-link>I mei biglietti</router-link>
+              <router-link to="" class="text-bianco">I miei biglietti</router-link>
           </div>
       </div>
   </div>
@@ -16,7 +16,6 @@
 export default {
     name: 'Navbar',
     mounted(){
-
     }
 }
 </script>

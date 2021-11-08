@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="flex flex-col bg-yellow-300 w-full h-screen">
+    <div class="flex flex-col bg-nero w-full h-screen">
       <Navbar></Navbar>
       <router-view></router-view>
     </div>
