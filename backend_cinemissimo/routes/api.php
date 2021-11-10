@@ -27,5 +27,5 @@ Route::get('/movies/{id}', [MovieController::class, 'detail']);
 Route::get('/movies/schedule/{id}', [ProjectionController::class, 'movieSchedule']);
 Route::get('/movies/schedule/projection/{id}', [ProjectionController::class, 'detail']);
 Route::get('/movies/schedule/projection/room/{id}', [RoomController::class, 'detail']);
-
+Route::post('/movies/create', [MovieController::class, 'create']);
 

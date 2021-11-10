@@ -14,4 +14,19 @@ class MovieController extends Controller
     public function detail($id) {
         return Movie::find($id);
     }
+
+    public function create(Request $req){
+        $movie_data = json_decode($req->getcontent());
+
+        $newMovie = new Movie;
+
+        $newMovie->title = $movie_data->title;
+        $newMovie->year = $movie_data->year;
+        $newMovie->duration = $movie_data->duration;
+        $newMovie->img = $movie_data->img;
+        $newMovie->description = $movie_data->description;
+
+        $newMovie->save();
+
+    }
 }
