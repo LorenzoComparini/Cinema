@@ -10,10 +10,10 @@
                     <label for="surname" class="text-white mb-1">Cognome</label>
                     <input id="surname" type="text" placeholder="Cognome" class="mr-4 px-3 outline-none py-1">
                 </div>
-                <fiv class="flex flex-col">
+                <div class="flex flex-col">
                     <label for="email" class="text-white mb-1">Email</label>
                     <input id="email" type="text" placeholder="email" class="mr-4 px-3 outline-none py-1">
-                </fiv>
+                </div>
                 
             </div>
             <div v-for="row in room.rows" :key="row" class="flex flex-row w-full justify-center text-black my-4">
