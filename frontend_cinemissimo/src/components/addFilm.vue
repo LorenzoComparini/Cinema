@@ -1,33 +1,19 @@
 <template>
-    <div class="flex flex-col">
-        <div class="flex flex-row">
-            <p>Aggiungi un nuovo film</p>
+    <div class="flex flex-row h-full w-full">
+        <div class="flex flex-col w-full h-full items-center text-white">
+            <label for="title">Titolo</label>
+            <input type="text" id="title" placeholder="title" v-model="movie.title">
+            <label for="title">Durata</label>
+            <input type="text" id="title" placeholder="title">
+            <label for="title">Anno</label>
+            <input type="text" id="title" placeholder="title">
+            <label for="title">Descrizione</label>
+            <input type="text" id="title" placeholder="title">
+            <label for="title">image</label>
+            <input type="text" id="title" placeholder="title">
+
+            {{ movie}}
         </div>
-        <div class="flex flex-row">
-            <p>Aggiungi la locandina</p>
-        </div>
-        <div class="flex flex-row">
-            <div class="flex flex-col">
-                <div class="flex flex-row">
-                    <input type="text" placeholder="Inserisci il titolo del film" v-model="movie[title]">
-                </div>
-                <div class="flex flex-row">
-                    <input type="text" placeholder="Inserisci la durata del film" v-model="movie[duration]">
-                </div>
-            </div>
-            <div class="flex flex-col">
-                <input type="text" placeholder="Inserisci la data di pubblicazione">
-            </div>
-        </div>
-        <div class="flex flex-row">
-            <textarea name="Mimmo Frontemare" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div class="flex flex-row">
-            <button>
-                Aggiungi film alla lista
-            </button>
-        </div>
-        <p class="text-white">{{ movie }}</p>
     </div>
 </template>
 
