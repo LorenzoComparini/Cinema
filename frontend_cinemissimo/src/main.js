@@ -3,6 +3,8 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 
 import Home from './components/Home'
+import MovieSchedule from './components/MovieSchedule'
+import buyTicket from './components/buyTicket'
 
 Vue.use(VueRouter)
 
@@ -18,7 +20,17 @@ const routes = [
     path: '/home',
     name: 'home',
     component: Home 
-  }
+  },
+  {
+    path: '/movies/schedule/:id',
+    name: 'schedule',
+    component: MovieSchedule
+  },
+  {
+    path: '/movies/schedule/ticket/:id',
+    name: 'buyTicket',
+    component: buyTicket
+  },
 ]
 
 const router = new VueRouter({
