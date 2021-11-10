@@ -6,7 +6,7 @@
       <div class="flex flex-col flex-grow"></div>
       <div class="flex flex-col">
           <div class="flex flex-row">
-              <router-link to="" class="text-bianco">I miei biglietti</router-link>
+              <router-link to="" class="text-bianco text-2xl">I miei biglietti</router-link>
           </div>
       </div>
   </div>

@@ -4,20 +4,27 @@
             <div class="flex flex-row w-full justify-center text-black mb-8">
                 <div class="flex flex-col">
                     <label for="name" class="text-white mb-1">Nome</label>
-                    <input id="name" type="text" placeholder="Nome" class="mr-4 px-3 outline-none py-1">
+                    <input id="name" type="text" placeholder="Nome" v-model="reservation.name" class="mr-4 px-3 outline-none py-1">
                 </div>
                 <div class="flex flex-col">
                     <label for="surname" class="text-white mb-1">Cognome</label>
-                    <input id="surname" type="text" placeholder="Cognome" class="mr-4 px-3 outline-none py-1">
+                    <input id="surname" type="text" placeholder="Cognome" v-model="reservation.surname" class="mr-4 px-3 outline-none py-1">
                 </div>
                 <div class="flex flex-col">
                     <label for="email" class="text-white mb-1">Email</label>
-                    <input id="email" type="text" placeholder="email" class="mr-4 px-3 outline-none py-1">
+                    <input id="email" type="text" placeholder="email" v-model="reservation.email" class="mr-4 px-3 outline-none py-1">
                 </div>
                 
             </div>
             <div v-for="row in room.rows" :key="row" class="flex flex-row w-full justify-center text-black my-4">
-                <div v-for="col in room.cols" :key="col" class="w-10 h-10 bg-green-400 hover:bg-green-600 cursor-pointer mx-2"></div>
+                <div v-for="col in room.cols" :key="col" 
+                    @click="aggiungePostoALista(row, col)" 
+                    :class="{
+                        'bg-green-400 hover:bg-green-600': !foundTicket(row, col),
+                        'bg-yellow-400 hover:bg-yellow-600': foundTicket(row, col)
+                    }" 
+                    class="w-10 h-10 cursor-pointer mx-2">
+                </div>
             </div>
         </div>
     </div>
@@ -32,7 +39,13 @@ export default {
     data(){
         return{
             projection: {},
-            room: {}
+            room: {},
+            reservation: {
+                name: "",
+                surname: "",
+                email: "",
+                list: []
+            },
         }
     },
 
@@ -40,7 +53,35 @@ export default {
         let projection_id = this.$route.params.id
         this.projection = (await axios.get('http://127.0.0.1:8000/api/movies/schedule/projection/' + projection_id)).data
         this.room = (await axios.get('http://127.0.0.1:8000/api/movies/schedule/projection/room/' + this.projection.room_id)).data
-        
+    },
+
+    methods: {
+        foundTicket(row, col) {
+            let foundTicket = this.reservation.list.find(el => {
+                return (el.row == row && el.col == col)
+            })
+            return foundTicket ? true : false;
+        },
+        aggiungePostoALista(row, col) {
+            let foundTicket = this.reservation.list.find(el => {
+                return (el.row == row && el.col == col)
+            })
+
+            if (!foundTicket) {
+                this.reservation.list.push({
+                    row,
+                    col
+                })
+            } else { 
+                let index = this.reservation.list.indexOf(foundTicket);
+                this.reservation.list.splice(index, 1);
+            }
+            
+            
+            //fare in modo che si rimouva se riclicco
+            //colorare in modo diverso
+
+        }
     }
 }
 </script>
