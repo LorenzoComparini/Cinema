@@ -1,21 +1,19 @@
 <template>
     <div class="flex flex-row h-full w-full">
-        <div class="flex flex-col w-full h-full items-center">
+        <div class="flex flex-col w-full h-full items-center justify-center">
             <label for="title" class="text-white">Titolo</label>
-            <input type="text" id="title" placeholder="title" v-model="movie.title">
-            <label for="title">Durata</label>
-            <input type="text" id="Durata" placeholder="title" v-model="movie.duration">
-            <label for="title">Anno</label>
-            <input type="text" id="Anno" placeholder="title" v-model="movie.year">
-            <label for="title">Descrizione</label>
+            <input class="rounded px-3 w-64" type="text" id="title" placeholder="title" v-model="movie.title">
+            <label for="title" class="text-white">Durata</label>
+            <input class="rounded px-3 w-64" type="text" id="Durata" placeholder="Durata" v-model="movie.duration">
+            <label for="title" class="text-white">Anno</label>
+            <input class="rounded px-3 w-64" type="text" id="Anno" placeholder="Anno" v-model="movie.year">
+            <label for="title" class="text-white mt-3">Descrizione</label>
             <!-- cambiare in textarea -->
-            <textarea name="descrizione" id="descrizione" cols="30" rows="10" placeholder="Descrizione" v-model="movie.description"></textarea>
-            <label for="title">image</label>
-            <input type="text" id="image" placeholder="title" v-model="movie.img">
+            <textarea class="rounded px-3 w-64 pt-1" name="descrizione" id="descrizione" cols="30" rows="10" placeholder="Descrizione" v-model="movie.description"></textarea>
+            <label for="title" class="text-white mt-3">image</label>
+            <input class="rounded px-3 w-64" type="text" id="image" placeholder="image" v-model="movie.img">
 
-            {{ movie }}
-
-            <button @click="addFilm()">
+            <button class="text-white" @click="addFilm()">
                 Aggiungi film
             </button>
         </div>
