@@ -6,7 +6,8 @@
       <div class="flex flex-col flex-grow"></div>
       <div class="flex flex-col">
           <div class="flex flex-row">
-              <router-link to="" class="text-bianco">I miei biglietti</router-link>
+              <router-link to="/movies/create" class="text-bianco ml-6">Aggiungi film</router-link>
+              <router-link to="" class="text-bianco ml-6">I miei biglietti</router-link>
           </div>
       </div>
   </div>

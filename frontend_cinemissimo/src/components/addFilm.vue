@@ -15,7 +15,7 @@
 
             {{ movie }}
 
-            <button @click="addFilm">
+            <button @click="addFilm()">
                 Aggiungi film
             </button>
         </div>
@@ -39,13 +39,12 @@ export default {
         }
     },
 
-    async addFilm() {
-        Response = await axios.post("http://localhost:8000/api/movies/create", this.movie)
+    methods: {
+        async addFilm() {
+            await axios.post("http://localhost:8000/api/movies/create", this.movie)   
+            this.$route.push("/home")
+        }
     }
 
 }
 </script>
-
-<style>
-
-</style>
