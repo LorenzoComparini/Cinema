@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-row h-full w-full">
-        <div class="flex flex-col w-full h-full items-center">
+        <div class="flex flex-col w-full h-full items-center p-20">
             <label for="title" class="text-white">Titolo</label>
             <input type="text" id="title" placeholder="title" v-model="movie.title">
             <label for="title">Durata</label>
