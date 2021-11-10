@@ -1,21 +1,23 @@
 <template>
-    <div class="flex flex-row h-full w-full">
-        <div class="flex flex-col w-full h-full items-center justify-center">
-            <label for="title" class="text-white">Titolo</label>
-            <input class="rounded px-3 w-64" type="text" id="title" placeholder="title" v-model="movie.title">
-            <label for="title" class="text-white">Durata</label>
-            <input class="rounded px-3 w-64" type="text" id="Durata" placeholder="Durata" v-model="movie.duration">
-            <label for="title" class="text-white">Anno</label>
-            <input class="rounded px-3 w-64" type="text" id="Anno" placeholder="Anno" v-model="movie.year">
-            <label for="title" class="text-white mt-3">Descrizione</label>
+    <div class="flex flex-row h-full w-full justify-center">
+        <div class="flex flex-col h-full w-1/4 justify-center ">
+            <label for="title" class="text-white mb-2">Titolo</label>
+            <input class="rounded px-3 w-full py-1 outline-none" type="text" id="title" placeholder="title" v-model="movie.title">
+            <label for="title" class="text-white mb-2 mt-3">Durata</label>
+            <input class="rounded px-3 w-full py-1 outline-none" type="text" id="Durata" placeholder="Durata" v-model="movie.duration">
+            <label for="title" class="text-white mb-2 mt-3">Anno</label>
+            <input class="rounded px-3 w-full py-1 outline-none" type="text" id="Anno" placeholder="Anno" v-model="movie.year">
+            <label for="title" class="text-white  mb-2 mt-3 outline-none">Descrizione</label>
             <!-- cambiare in textarea -->
-            <textarea class="rounded px-3 w-64 pt-1" name="descrizione" id="descrizione" cols="30" rows="10" placeholder="Descrizione" v-model="movie.description"></textarea>
-            <label for="title" class="text-white mt-3">image</label>
-            <input class="rounded px-3 w-64" type="text" id="image" placeholder="image" v-model="movie.img">
+            <textarea class="rounded px-3 w-full pt-1 py-1 outline-none" name="descrizione" id="descrizione" cols="30" rows="10" placeholder="Descrizione" v-model="movie.description"></textarea>
+            <label for="title" class="text-white  mb-2 mt-3">image</label>
+            <input class="rounded px-3 w-full py-1 outline-none" type="text" id="image" placeholder="image" v-model="movie.img">
 
-            <button class="text-white" @click="addFilm()">
-                Aggiungi film
-            </button>
+            <div class="w-full flex flex-row justify-end mt-7">
+                <button class="text-white bg-yellow-600 rounded-lg py-1 px-4" @click="addFilm()">
+                    Aggiungi film
+                </button>
+            </div>
         </div>
     </div>
 </template>

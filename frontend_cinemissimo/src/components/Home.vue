@@ -5,6 +5,7 @@
                 <img :src="movie.img" alt="" class="w-full mb-2 font-medium rounded">
                 <p class="text-bianco">{{ movie.title }}</p>
             </div>
+            
         </div>
     </div>
 </template>
