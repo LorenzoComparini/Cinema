@@ -4,11 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bianco: '#EEEBDD',
-        rosso: {
-          DEFAULT: '#CE1212',
-          dark: '#810000'
+        bianco: '#EFEFEF',
+        blu: {
+          DEFAULT: '#053F5E',
+          dark: '#022C43',
+          light: '#115173'
         },
+        giallo: '#FFD700',
         nero: '#1B1717'
       },
     },

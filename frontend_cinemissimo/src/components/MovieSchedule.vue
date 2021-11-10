@@ -11,13 +11,13 @@
       </div>
       <div class="flex flex-col h-full w-1/3 px-8">
         <p class="text-2xl text-bianco">Programmazione</p>
-        <div v-for="projection in projections" :key="projection.id" class="flex flex-row w-full py-3 px-3 bg-yellow-500 hover:bg-yellow-600 cursor-pointer items-center mt-4" @click="goToBuyTicket(projection.id)">
+        <div v-for="projection in projections" :key="projection.id" class="text-blu-dark flex flex-row w-full py-3 px-3 bg-giallo hover:bg-yellow-400 cursor-pointer items-center mt-4" @click="goToBuyTicket(projection.id)">
             <div class="flex flex-col">
-                <p class="text-bianco">{{ projection.date }}</p>
+                <p class="">{{ projection.date }}</p>
             </div>
             <div class="flex flex-col flex-grow"></div>
             <div class="flex flex-col">
-                <p class="text-2xl text-bianco font-bold">></p>
+                <p class="text-2xl font-bold">></p>
             </div>
         </div>
       </div>

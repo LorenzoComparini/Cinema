@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row h-full w-full justify-center">
+    <div class="flex flex-row h-full w-full justify-center pt-10">
         <div class="flex flex-col h-full w-1/4 justify-center ">
             <label for="title" class="text-white mb-2">Titolo</label>
             <input class="rounded px-3 w-full py-1 outline-none" type="text" id="title" placeholder="title" v-model="movie.title">
@@ -14,7 +14,7 @@
             <input class="rounded px-3 w-full py-1 outline-none" type="text" id="image" placeholder="image" v-model="movie.img">
 
             <div class="w-full flex flex-row justify-end mt-7">
-                <button class="text-white bg-yellow-600 rounded-lg py-1 px-4" @click="addFilm()">
+                <button class="text-blu-dark bg-giallo rounded-lg py-1 px-4" @click="addFilm()">
                     Aggiungi film
                 </button>
             </div>

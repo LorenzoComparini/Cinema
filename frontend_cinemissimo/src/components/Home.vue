@@ -1,7 +1,7 @@
 <template>
-    <div class="h-full w-full px-20 py-20">
-        <div class="grid grid-cols-5 w-full gap-8">
-            <div v-for="movie in movies" :key="movie.id" class="flex flex-col justify-center cursor-pointer border-b-4 border-nero hover:border-rosso-dark py-4 px-2" @click="goToMovieSchedule(movie.id)">
+    <div class="h-full w-full px-20 py-10">
+        <div class="grid grid-cols-6 w-full gap-8">
+            <div v-for="movie in movies" :key="movie.id" class="flex flex-col justify-center cursor-pointer border-b-4 border-blu-dark hover:border-giallo hover:bg-blu py-4 px-2 transition-all duration-500" @click="goToMovieSchedule(movie.id)">
                 <img :src="movie.img" alt="" class="w-full mb-2 font-medium rounded">
                 <p class="text-bianco">{{ movie.title }}</p>
             </div>
