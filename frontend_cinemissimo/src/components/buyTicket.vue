@@ -57,9 +57,9 @@ export default {
 
     methods: {
         /** Cerca il posto da sedere nella lista.
-         * Ritorna vero se trova il posto già nella lista e falso altrimenti.
          * @param row{number} Riga del posto da sedere
          * @param col{number} Colonna del posto da sedere
+         * @returns{boolean} Ritorna vero se trova il posto già nella lista e falso altrimenti.
          * */
         foundTicket(row, col) {
             let foundTicket = this.reservation.list.find(el => {
