@@ -56,12 +56,23 @@ export default {
     },
 
     methods: {
+        /** Cerca il posto da sedere nella lista.
+         * Ritorna vero se trova il posto già nella lista e falso altrimenti.
+         * @param row{number} Riga del posto da sedere
+         * @param col{number} Colonna del posto da sedere
+         * */
         foundTicket(row, col) {
             let foundTicket = this.reservation.list.find(el => {
                 return (el.row == row && el.col == col)
             })
             return foundTicket ? true : false;
         },
+        /**Cerca il posto da sedere nella lista.
+         * Se non lo trova, lo aggiunge alla lista.
+         * Se lo trova, lo rimuova dalla lista.
+         * @param row{number} Riga del posto da sedere
+         * @param col{number} Colonna del posto da sedere
+         *   */ 
         aggiungePostoALista(row, col) {
             let foundTicket = this.reservation.list.find(el => {
                 return (el.row == row && el.col == col)
@@ -76,11 +87,6 @@ export default {
                 let index = this.reservation.list.indexOf(foundTicket);
                 this.reservation.list.splice(index, 1);
             }
-            
-            
-            //fare in modo che si rimouva se riclicco
-            //colorare in modo diverso
-
         }
     }
 }
