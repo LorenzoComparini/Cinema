@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="flex flex-col bg-nero w-full h-full">
+    <div class="flex flex-col bg-blu-dark w-full min-h-screen">
       <Navbar></Navbar>
       <router-view></router-view>
     </div>
@@ -17,5 +17,3 @@ export default {
   }
 }
 </script>
-
-

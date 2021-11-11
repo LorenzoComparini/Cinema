@@ -1,12 +1,13 @@
 <template>
-  <div class="flex flex-row bg-rosso w-full items-center px-10 py-7">
+  <div class="flex flex-row bg-blu w-full items-center px-10">
       <div class="flex flex-col">
-          <p class="text-5xl text-bianco">Cinema</p>
+          <router-link to="/home" class="text-5xl text-giallo my-5">UCY</router-link>
       </div>
       <div class="flex flex-col flex-grow"></div>
-      <div class="flex flex-col">
-          <div class="flex flex-row">
-              <router-link to="" class="text-bianco text-2xl">I miei biglietti</router-link>
+      <div class="flex flex-col h-full">
+          <div class="flex flex-row h-full items-center">
+              <router-link to="/movies/create" active-class="text-giallo" class="flex flex-col justify-center text-bianco ml-6 h-full">Aggiungi film</router-link>
+              <router-link to="" active-class="" class="flex flex-col justify-center text-bianco ml-6 h-full">I miei biglietti</router-link>
           </div>
       </div>
   </div>
@@ -19,4 +20,3 @@ export default {
     }
 }
 </script>
-
