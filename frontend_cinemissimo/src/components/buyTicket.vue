@@ -44,7 +44,7 @@ export default {
             projection: {},
             room: {},
             reservation: {
-                proj_id: null,
+                projection_id: null,
                 name: "",
                 surname: "",
                 mail: "",
@@ -55,7 +55,7 @@ export default {
 
     async mounted(){
         let projection_id = this.$route.params.id
-        this.reservation.proj_id = projection_id
+        this.reservation.projection_id = projection_id
         this.projection = (await axios.get('http://127.0.0.1:8000/api/movies/schedule/projection/' + projection_id)).data
         this.room = (await axios.get('http://127.0.0.1:8000/api/movies/schedule/projection/room/' + this.projection.room_id)).data
     },
@@ -101,7 +101,7 @@ export default {
         async saveReservation(){
             await axios.post("http://localhost:8000/api/reservations/save", this.reservation)
             
-            this.$router.push('/home')
+            // this.$router.push('/home')
         }
     }
 }

@@ -12,4 +12,8 @@ class Reservation extends Model
     public function projection(){
         return $this->belongsTo(Projection::class);
     }
+
+    public function tickets(){
+        return $this->hasMany(Ticket::class);
+    }
 }
