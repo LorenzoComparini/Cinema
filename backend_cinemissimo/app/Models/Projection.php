@@ -9,6 +9,14 @@ class Projection extends Model
 {
     use HasFactory;
 
+    public $withCount = [
+        "tickets"
+    ];
+
+    public $with = [
+        "room"
+    ];
+
     public function movie(){
         return $this->belongsTo(Movie::class);
     }
@@ -20,4 +28,9 @@ class Projection extends Model
     public function room(){
         return $this->belongsTo(Room::class);
     }
+
+    public function tickets(){
+        return $this->hasManyThrough(Ticket::class, Reservation::class);
+    }
+
 }

@@ -50,6 +50,7 @@ export default {
                 mail: "",
                 list: []
             },
+            projection_tickets: [],
         }
     },
 
@@ -58,6 +59,10 @@ export default {
         this.reservation.projection_id = projection_id
         this.projection = (await axios.get('http://127.0.0.1:8000/api/movies/schedule/projection/' + projection_id)).data
         this.room = (await axios.get('http://127.0.0.1:8000/api/movies/schedule/projection/room/' + this.projection.room_id)).data
+        this.projection_tickets = (await axios.get('http://127.0.0.1:8000/api/projection_tickets/' + this.projection.id)).data
+        // console.log("tickets");
+        console.log(this.projection_tickets);
+
     },
 
     methods: {

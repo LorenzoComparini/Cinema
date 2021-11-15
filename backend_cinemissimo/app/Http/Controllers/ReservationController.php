@@ -44,4 +44,8 @@ class ReservationController extends Controller
     public function list(){
         return Reservation::all();
     }
+
+    public function ticket(){
+        
+    }
 }

@@ -12,7 +12,7 @@ class MovieController extends Controller
     }
 
     public function detail($id) {
-        return Movie::find($id);
+        return Movie::with(["projections"   ])->find($id);
     }
 
     public function create(Request $req){

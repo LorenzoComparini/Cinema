@@ -16,6 +16,11 @@ class ProjectionController extends Controller
     }
 
     public function movieSchedule($id){
-        return Projection::where('movie_id', $id)->orderBy('date', 'asc')->get();
+        return Projection::where('movie_id', $id)->orderBy('date', 'asc')->withCount("tickets")->get();
     }   
+
+    public function projection_tickets($projection_id){
+        $projection = Projection::find($projection_id);
+        return $projection->tickets;
+    }
 }

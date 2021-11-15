@@ -11,13 +11,15 @@
       </div>
       <div class="flex flex-col h-full w-1/3 px-8">
         <p class="text-2xl text-bianco">Programmazione</p>
-        <div v-for="projection in projections" :key="projection.id" class="text-blu-dark flex flex-row w-full py-3 px-3 bg-giallo hover:bg-yellow-400 cursor-pointer items-center mt-4" @click="goToBuyTicket(projection.id)">
+        <div v-for="projection in movie.projections" :key="projection.id" class="text-blu-dark flex flex-row w-full py-3 px-3 bg-giallo hover:bg-yellow-400 cursor-pointer items-center mt-4" @click="goToBuyTicket(projection.id)">
             <div class="flex flex-col">
                 <p class="">{{ projection.date }}</p>
+                <p>Posti disponibili: {{ projection.room.seats - projection.tickets_count }}</p>
+                <p>Stanza: {{ projection.room.id }}</p>
             </div>
             <div class="flex flex-col flex-grow"></div>
             <div class="flex flex-col">
-                <p class="text-2xl font-bold">></p>
+                <p class="text-2xl font-bold text-white bg-blu-dark rounded-full p-1">></p>
             </div>
         </div>
       </div>
@@ -33,7 +35,6 @@ export default {
     data(){
         return{
             movie: {},
-            projections: [],
         }
     },
 
@@ -41,8 +42,6 @@ export default {
         let movie_id = this.$route.params.id
         this.movie = (await axios.get('http://127.0.0.1:8000/api/movies/' + movie_id)).data
         console.log(('http://127.0.0.1:8000/api/movies/schedule/' + movie_id));
-        this.projections = (await axios.get('http://127.0.0.1:8000/api/movies/schedule/' + movie_id)).data
-        console.log(this.projections);
     },
 
     methods: {
