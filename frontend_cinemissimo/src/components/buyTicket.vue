@@ -27,7 +27,7 @@
                 </div>
             </div>
             <button class="text-blu-dark font-semibold bg-giallo rounded-lg py-1 px-4 ml-auto mt-4" @click="saveReservation()">
-                    Aggiungi film
+                Prenota
             </button>
         </div>
     </div>
