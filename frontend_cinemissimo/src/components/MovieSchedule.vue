@@ -15,7 +15,7 @@
             <div class="flex flex-col">
                 <p class="">{{ projection.date }}</p>
                 <p>Posti disponibili: {{ projection.room.seats - projection.tickets_count }}</p>
-                <p>Stanza: {{ projection.room.id }}</p>
+                <p>Stanza: {{ projection.room.room_name }}</p>
             </div>
             <div class="flex flex-col flex-grow"></div>
             <div class="flex flex-col">
