@@ -25,7 +25,6 @@ export default {
     },
 
     async mounted(){
-        // this.tickets = (await axios.get("http://localhost:8000/api/tickets/")).data
         this.reservations = (await axios.get("http://localhost:8000/api/reservations")).data
     }
 }

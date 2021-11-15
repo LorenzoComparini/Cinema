@@ -7,7 +7,7 @@
       <div class="flex flex-col h-full">
           <div class="flex flex-row h-full items-center">
               <router-link to="/movies/create" active-class="text-giallo" class="flex flex-col justify-center text-bianco ml-6 h-full">Aggiungi film</router-link>
-              <router-link to="" active-class="" class="flex flex-col justify-center text-bianco ml-6 h-full">I miei biglietti</router-link>
+              <router-link to="/myTickets" active-class="" class="flex flex-col justify-center text-bianco ml-6 h-full">I miei biglietti</router-link>
           </div>
       </div>
   </div>

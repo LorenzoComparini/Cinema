@@ -101,7 +101,7 @@ export default {
         async saveReservation(){
             await axios.post("http://localhost:8000/api/reservations/save", this.reservation)
             
-            // this.$router.push('/home')
+            this.$router.push('/home')
         }
     }
 }

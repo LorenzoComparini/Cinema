@@ -22,7 +22,7 @@ class ReservationController extends Controller
         $new_reservation->save();
 
         $tickets = $reservation_data->list;
-        Log::info($tickets);
+        // Log::info($tickets);
 
         foreach ($tickets as $ticket) {
             $new_ticket = new Ticket();
@@ -32,13 +32,12 @@ class ReservationController extends Controller
 
             $new_ticket->save();
 
-            Log::info($new_ticket);
-
-            return response()->json($new_ticket, 201);
+            // Log::info($new_ticket);
+            // return response()->json($new_ticket, 201);
         }
         
-        Log::info($new_reservation->id);
-        return response()->json($new_reservation, 201);
+        // Log::info($new_reservation->id);
+        // return response()->json($new_reservation, 201);
     }
 
 

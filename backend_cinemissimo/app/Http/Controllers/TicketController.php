@@ -18,4 +18,8 @@ class TicketController extends Controller
     public function list_reservation_seats($reservation_id){
         return Ticket::where("reservation_id", $reservation_id)->get();
     }
+
+    public function list_projection_seats($projection_id){
+        return Ticket::where();
+    }
 }
