@@ -23,12 +23,31 @@
                     <div v-if="!!reservedSeat(row, col)" class="w-full h-full bg-red-400 cursor-not-allowed" ></div>
                     <div v-else class="w-full h-full cursor-pointer" @click="aggiungePostoALista(row, col)" :class="{
                         'bg-green-400 hover:bg-green-600': !foundTicket(row, col),
-                        'bg-yellow-400 hover:bg-yellow-600': !!foundTicket(row, col),
+                        'bg-yellow-400 hover:bg-yellow-600': !!foundTicket(row, col)
                     }" ></div>
                 </div>
             </div>
 
-            <button class="text-blu-dark font-semibold bg-giallo rounded-lg py-1 px-4 ml-auto mt-4" @click="saveReservation()">
+            <button class="font-semibold rounded-lg py-1 px-4 ml-auto mt-4" 
+                @click="saveReservation()" 
+                :disabled="this.reservation.list.length == 0 
+                           || this.reservation.name == ''
+                           || this.reservation.surname == ''
+                           || this.reservation.mail == ''
+                          "
+                :class="{
+                        'cursor-not-allowed bg-gray-600 text-white': 
+                           this.reservation.list.length == 0 
+                           || this.reservation.name == ''
+                           || this.reservation.surname == ''
+                           || this.reservation.mail == '',
+                        'cursor-pointer  bg-giallo text-blu-dark': 
+                           this.reservation.list.length != 0 
+                           && this.reservation.name != ''
+                           && this.reservation.surname != ''
+                           && this.reservation.mail != ''
+                        }"
+            >
                 Prenota
             </button>
         </div>
