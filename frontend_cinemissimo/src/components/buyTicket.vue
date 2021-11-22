@@ -18,14 +18,16 @@
             </div>
             <div v-for="row in room.rows" :key="row" class="flex flex-row w-full justify-center text-black my-4">
                 <div v-for="col in room.cols" :key="col" 
-                    @click="aggiungePostoALista(row, col)" 
-                    :class="{
+                     
+                    class="w-10 h-10 mx-2">
+                    <div v-if="!!reservedSeat(row, col)" class="w-full h-full bg-red-400 cursor-not-allowed" ></div>
+                    <div v-else class="w-full h-full cursor-pointer" @click="aggiungePostoALista(row, col)" :class="{
                         'bg-green-400 hover:bg-green-600': !foundTicket(row, col),
-                        'bg-yellow-400 hover:bg-yellow-600': foundTicket(row, col)
-                    }" 
-                    class="w-10 h-10 cursor-pointer mx-2">
+                        'bg-yellow-400 hover:bg-yellow-600': !!foundTicket(row, col),
+                    }" ></div>
                 </div>
             </div>
+
             <button class="text-blu-dark font-semibold bg-giallo rounded-lg py-1 px-4 ml-auto mt-4" @click="saveReservation()">
                 Prenota
             </button>
@@ -51,6 +53,7 @@ export default {
                 list: []
             },
             projection_tickets: [],
+            reservedSeatsList: []
         }
     },
 
@@ -60,7 +63,7 @@ export default {
         this.projection = (await axios.get('http://127.0.0.1:8000/api/movies/schedule/projection/' + projection_id)).data
         this.room = (await axios.get('http://127.0.0.1:8000/api/movies/schedule/projection/room/' + this.projection.room_id)).data
         this.projection_tickets = (await axios.get('http://127.0.0.1:8000/api/projection_tickets/' + this.projection.id)).data
-        // console.log("tickets");
+        console.log("tickets");
         console.log(this.projection_tickets);
 
     },
@@ -75,7 +78,15 @@ export default {
             let foundTicket = this.reservation.list.find(el => {
                 return (el.row == row && el.col == col)
             })
-            return foundTicket ? true : false;
+            return foundTicket;
+        },
+        /** Funzione bellissima, peccato che dovrei richiamarla al mounted, ma così non posso passare row e col*/
+        reservedSeat(row, col) {
+            let reservedSeat = this.projection_tickets.find(elem => {
+                return (elem.row == row && elem.col == col)
+            })
+            console.log("Cerco i posti riservati: ", reservedSeat, row, col);
+            return reservedSeat;
         },
         /**Cerca il posto da sedere nella lista.
          * Se non lo trova, lo aggiunge alla lista.
@@ -83,7 +94,6 @@ export default {
          * @param row{number} Riga del posto da sedere
          * @param col{number} Colonna del posto da sedere
          *   */ 
-
         aggiungePostoALista(row, col) {
             let foundTicket = this.reservation.list.find(el => {
                 return (el.row == row && el.col == col)
