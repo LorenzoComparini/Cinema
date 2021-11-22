@@ -3,8 +3,12 @@
       <div class="flex flex-col h-full w-2/3 my-auto">
         <div class="flex flex-row w-full h-full">
             <img :src="movie.img" alt="" class="w-80 mr-10">
-            <div>
-            <p class="text-2xl font-semibold text-bianco mb-4">{{ movie.title }}</p>    
+            <div class="w-full">
+                <div class="flex w-full items-center mb-4 space-x-4">
+                    <p class="text-2xl font-semibold text-bianco">{{ movie.title }}</p>    
+                    <p class="px-3 py-1 bg-giallo text-blu-dark font-semibold rounded-lg">3D</p>
+                </div>
+            
             <p class="text-xl italic text-gray-300">{{ movie.description }}</p>
             </div>
         </div>

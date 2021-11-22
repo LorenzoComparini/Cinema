@@ -8,7 +8,7 @@
             <input type="checkbox" name="" id="3d" :v-model="projection['3d']" class="my-1 outline-none">
 
             <label for="title" class="text-white mb-2">Stanza</label>
-            <select name="" id="" v-model="projection.room_id" class="rounded px-3 w-full py-1 outline-none">
+            <select name="" id="" v-model="projection.room_id" class="outline-none">
                 <option v-for="room in rooms" :key="room.id" :value="room.id">{{ room.room_name }}</option>
             </select>
 

@@ -4,14 +4,18 @@
       <div class="flex flex-col w-1/3">
           <div v-for="reservation in reservations" :key="reservation.id" class="flex flex-row max-w-screen-md w-full bg-white rounded-lg p-5 mb-6 m-auto">
             <div class="flex flex-col">
-                <img :src="reservation.projection.movie.img" class="h-48 mr-7" alt="">
+                <img :src="reservation.projection.movie.img" class="h-48 min-w-max mr-7" alt="">
             </div>
             <div class="flex flex-col h-full">
-                <p class="text-xl font-semibold">{{ reservation.projection.movie.title }}</p>
+                <div class="flex">
+                    <p class="text-xl font-semibold">{{ reservation.projection.movie.title }}</p>
+
+
+                </div>
                 <p class="text-lg italic">{{ reservation.name }} {{ reservation.surname }}</p>
 
-                <div class="flex flex-row items-end h-full ">
-                    <p class="font-semibold text-lg mr-3 ">Posti:</p>
+                <div class="flex flex-row items-end h-full w-auto flex-wrap">
+                    <p class="font-semibold text-lg mr-3">Posti:</p>
                     <p v-for="ticket in reservation.tickets" :key="ticket.id" class="bg-blu mr-1 py-1 px-2 rounded-lg text-white">
                         {{ticket.row}}, {{ticket.col}}
                     </p>
