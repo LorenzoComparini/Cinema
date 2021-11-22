@@ -19,7 +19,9 @@
             </div>
             <div class="flex flex-col flex-grow"></div>
             <div class="flex flex-col">
-                <p class="text-2xl font-bold text-white bg-blu-dark rounded-full p-1">></p>
+                <div class="w-9 h-9 bg-blu-dark rounded-full flex justify-center items-center text-white text-xl font-semibold">
+                    >
+                </div>
             </div>
         </div>
         <div class="text-blu-dark flex flex-row w-full py-3 px-3 justify-center items-center mt-4">
