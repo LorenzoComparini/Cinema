@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-row h-full w-full p-20">
+  <div class="flex flex-row h-full w-full pt-10">
       <div class="flex flex-col w-full">
-          <div v-for="reservation in reservations" :key="reservation.id" class="flex flex-row w-2/5 bg-white rounded-lg py-7 px-10 mb-6">
+          <div v-for="reservation in reservations" :key="reservation.id" class="flex flex-row max-w-screen-md bg-white rounded-lg py-7 px-10 mb-6 m-auto">
             <div class="flex flex-col">
                 <img :src="reservation.projection.movie.img" class="h-40 mr-7" alt="">
             </div>
