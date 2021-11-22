@@ -34,7 +34,6 @@ export default {
                 img: "",
                 description:""
             }
-            // creare una funzione per fare una chiamata post per creare il film
         }
     },
 
