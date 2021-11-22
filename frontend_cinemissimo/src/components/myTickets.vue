@@ -6,11 +6,15 @@
             <div class="flex flex-col">
                 <img :src="reservation.projection.movie.img" class="h-48 min-w-max mr-7" alt="">
             </div>
-            <div class="flex flex-col h-full">
-                <div class="flex">
+            <div class="flex flex-col h-full w-full pl-8">
+                <div class="flex justify-between w-full">
                     <p class="text-xl font-semibold">{{ reservation.projection.movie.title }}</p>
 
-
+                    <img
+                    class="cursor-pointer hover:bg-giallo rounded-full p-2"
+                    src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png"
+                    @click="deleteReservation()"
+                    />
                 </div>
                 <p class="text-lg italic">{{ reservation.name }} {{ reservation.surname }}</p>
 
