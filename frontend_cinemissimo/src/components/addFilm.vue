@@ -8,7 +8,6 @@
             <label for="title" class="text-white mb-2 mt-3">Anno</label>
             <input class="rounded px-3 w-full py-1 outline-none" type="text" id="Anno" placeholder="Anno" v-model="movie.year">
             <label for="title" class="text-white  mb-2 mt-3 outline-none">Descrizione</label>
-            <!-- cambiare in textarea -->
             <textarea class="rounded px-3 w-full pt-1 py-1 outline-none" name="descrizione" id="descrizione" cols="30" rows="10" placeholder="Descrizione" v-model="movie.description"></textarea>
             <label for="title" class="text-white  mb-2 mt-3">image</label>
             <input class="rounded px-3 w-full py-1 outline-none" type="text" id="image" placeholder="image" v-model="movie.img">
@@ -35,7 +34,6 @@ export default {
                 img: "",
                 description:""
             }
-            // creare una funzione per fare una chiamata post per creare il film
         }
     },
 
