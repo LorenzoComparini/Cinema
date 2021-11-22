@@ -8,8 +8,10 @@
                     <p class="text-2xl font-semibold text-bianco">{{ movie.title }}</p>    
                     <p class="px-3 py-1 bg-giallo text-blu-dark font-semibold rounded-lg">3D</p>
                 </div>
+            <p class="text-sm italic text-gray-300">Durata: {{ movie.duration }} minuti</p>
+            <p class="text-sm italic text-gray-300 mb-6 mt-1">Pubblicazione: {{ movie.year }}</p>
+            <p class="text-xl italic text-gray-300">Trama: {{ movie.description }}</p>
             
-            <p class="text-xl italic text-gray-300">{{ movie.description }}</p>
             </div>
         </div>
       </div>
