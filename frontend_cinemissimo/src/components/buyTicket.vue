@@ -22,8 +22,8 @@
                     class="w-10 h-10 mx-2">
                     <div v-if="!!reservedSeat(row, col)" class="w-full h-full bg-red-400 cursor-not-allowed" ></div>
                     <div v-else class="w-full h-full cursor-pointer" @click="aggiungePostoALista(row, col)" :class="{
-                        'bg-green-400 hover:bg-green-600': !foundTicket(row, col),
-                        'bg-yellow-400 hover:bg-yellow-600': !!foundTicket(row, col)
+                        'bg-green-400 hover:bg-green-300': !foundTicket(row, col),
+                        'bg-yellow-400 hover:bg-yellow-300': !!foundTicket(row, col)
                     }" ></div>
                 </div>
             </div>
