@@ -7,6 +7,7 @@ import MovieSchedule from './components/MovieSchedule'
 import buyTicket from './components/buyTicket'
 import addFilm from './components/addFilm'
 import myTickets from './components/myTickets'
+import addProjection from './components/addProjection'
 
 Vue.use(VueRouter)
 
@@ -42,6 +43,11 @@ const routes = [
     path: '/myTickets',
     name: 'myTickets',
     component: myTickets
+  },
+  {
+    path: '/newProjection/:movie_id',
+    name: 'newProjection',
+    component: addProjection
   },
 ]
 
