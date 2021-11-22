@@ -46,6 +46,6 @@ class ReservationController extends Controller
     }
 
     public function all_reservations_details(){
-        return Reservation::with(["tickets", "projection", "movie"])->all();
+        return Reservation::with(["tickets", "projection", "projection.movie"])->get();
     }
 }

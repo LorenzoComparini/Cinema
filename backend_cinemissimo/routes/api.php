@@ -35,3 +35,5 @@ Route::get('/tickets/{reservation_id}', [TicketController::class, 'list_reservat
 Route::get('/tickets', [TicketController::class, 'list']);
 Route::get('/reservations', [ReservationController::class, 'list']);
 Route::get('/projection_tickets/{projection_id}', [ProjectionController::class, 'projection_tickets']);
+Route::get('/reservation_details', [ReservationController::class, 'all_reservations_details']);
+
