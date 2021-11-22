@@ -26,9 +26,9 @@
         </div>
         <div class="text-blu-dark flex flex-row w-full py-3 px-3 justify-center items-center mt-4">
             <div class="flex flex-col w-10 h-10 rounded-full bg-giallo hover:bg-yellow-400 justify-center items-center cursor-pointer"
-            @click="goToNewProjection()"
+                @click="goToNewProjection()"
             >
-                <p class="text-2xl font-bold">+</p>
+                <div class="text-2xl font-bold mb-1">+</div>
             </div>
         </div>
       </div>
