@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-row w-full h-full p-20">
-      <div class="flex flex-col h-full w-2/3">
+  <div class="flex flex-row w-full p-20">
+      <div class="flex flex-col h-full w-2/3 my-auto">
         <div class="flex flex-row w-full h-full">
             <img :src="movie.img" alt="" class="w-80 mr-10">
             <div>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="text-blu-dark flex flex-row w-full py-3 px-3 justify-center items-center mt-4">
-            <div class="flex flex-col w-10 h-10 rounded-full bg-giallo justify-center items-center cursor-pointer"
+            <div class="flex flex-col w-10 h-10 rounded-full bg-giallo hover:bg-yellow-400 justify-center items-center cursor-pointer"
             @click="goToNewProjection()"
             >
                 <p class="text-2xl font-bold">+</p>
