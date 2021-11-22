@@ -22,6 +22,13 @@
                 <p class="text-2xl font-bold text-white bg-blu-dark rounded-full p-1">></p>
             </div>
         </div>
+        <div class="text-blu-dark flex flex-row w-full py-3 px-3 justify-center items-center mt-4">
+            <div class="flex flex-col w-10 h-10 rounded-full bg-giallo justify-center items-center cursor-pointer"
+            @click="goToNewProjection()"
+            >
+                <p class="text-2xl font-bold">+</p>
+            </div>
+        </div>
       </div>
   </div>
 </template>
@@ -47,6 +54,13 @@ export default {
     methods: {
         goToBuyTicket(id){
             this.$router.push('ticket/' + id) // inserire link api
+        },
+
+        goToNewProjection(){
+            let movie_id = this.$route.params.id
+            this.$router.push('/newProjection/' + movie_id) // inserire link api
+
+
         }
     }
 

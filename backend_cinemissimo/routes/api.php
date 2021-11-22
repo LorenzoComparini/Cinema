@@ -36,4 +36,6 @@ Route::get('/tickets', [TicketController::class, 'list']);
 Route::get('/reservations', [ReservationController::class, 'list']);
 Route::get('/projection_tickets/{projection_id}', [ProjectionController::class, 'projection_tickets']);
 Route::get('/reservation_details', [ReservationController::class, 'all_reservations_details']);
+Route::get('/rooms', [RoomController::class, 'list']);
+Route::post('/projection/create', [ProjectionController::class, 'new_projection']);
 
