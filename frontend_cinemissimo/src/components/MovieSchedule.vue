@@ -25,8 +25,8 @@
             </div>
             <div class="flex flex-col flex-grow"></div>
             <div class="flex flex-col">
-                <div class="w-9 h-9 bg-blu-dark rounded-full flex justify-center items-center text-white text-xl font-semibold">
-                    >
+                <div class="w-9 h-9 bg-blu-dark rounded-full flex justify-center items-center text-white text-xl font-bold">
+                    <div class="mb-1">></div>
                 </div>
             </div>
         </div>

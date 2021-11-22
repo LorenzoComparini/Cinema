@@ -62,7 +62,7 @@ export default {
     methods: {
         async addFilm() {
             await axios.post("http://localhost:8000/api/movies/create", this.movie)   
-            this.$route.push("/home")
+            this.$router.push("/home")
         }
     }
 
