@@ -7,13 +7,19 @@
                 <div class="flex w-full items-center mb-4 space-x-4">
                     <p class="text-2xl font-semibold text-bianco">{{ movie.title }}</p>    
                 </div>
-            <p class="text-sm italic text-gray-300">Durata: {{ movie.duration }} minuti</p>
-            <p class="text-sm italic text-gray-300 mb-6 mt-1">Pubblicazione: {{ movie.year }}</p>
-            <p class="text-xl italic text-gray-300">Trama: {{ movie.description }}</p>
-            
+                <p class="text-sm italic text-gray-300">Durata: {{ movie.duration }} minuti</p>
+                <p class="text-sm italic text-gray-300 mb-6 mt-1">Pubblicazione: {{ movie.year }}</p>
+                <p class="text-xl italic text-gray-300">Trama: {{ movie.description }}</p>
             </div>
         </div>
+        <div class="flex justify-center items-center material-icons text-4xl text-white w-12 h-12 hover:bg-giallo hover:text-black cursor-pointer rounded-full mt-4"
+        @click="deleteMovie(movie.id)"
+        >
+            delete_outline  
+        </div>
       </div>
+
+
       <div class="flex flex-col h-full w-1/3 px-8">
         <p class="text-2xl text-bianco">Programmazione</p>
         <div v-for="projection in movie.projections" :key="projection.id" class="text-blu-dark flex flex-row w-full py-3 px-3 bg-giallo hover:bg-yellow-400 cursor-pointer items-center mt-4" @click="goToBuyTicket(projection.id)">
@@ -28,7 +34,11 @@
             <div class="flex flex-col flex-grow"></div>
             <div class="flex flex-col">
                 <div class="w-9 h-9 bg-blu-dark rounded-full flex justify-center items-center text-white text-xl font-bold">
-                    <div class="mb-1">></div>
+                    <div class="">
+                        <span class="material-icons flex justify-center items-center">
+                            chevron_right
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,8 +79,12 @@ export default {
         goToNewProjection(){
             let movie_id = this.$route.params.id
             this.$router.push('/newProjection/' + movie_id) // inserire link api
+        },
 
-
+        async deleteMovie(id){
+            let url = "http://localhost:8000/api/movie/delete/" + id;
+            await axios.delete(url);
+            this.$router.push("/home")
         }
     }
 

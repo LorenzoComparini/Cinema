@@ -29,4 +29,9 @@ class MovieController extends Controller
         $newMovie->save();
 
     }
+
+    public function deleteMovie($id){
+        $movie = Movie::find($id);
+        $movie->delete();
+    }
 }
