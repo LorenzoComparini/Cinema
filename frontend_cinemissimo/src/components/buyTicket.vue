@@ -104,7 +104,6 @@ export default {
             let reservedSeat = this.projection_tickets.find(elem => {
                 return (elem.row == row && elem.col == col)
             })
-            console.log("Cerco i posti riservati: ", reservedSeat, row, col);
             return reservedSeat;
         },
         /**Cerca il posto da sedere nella lista.

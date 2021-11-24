@@ -49,8 +49,13 @@ class ReservationController extends Controller
         return Reservation::with(["tickets", "projection", "projection.movie"])->get();
     }
 
-    public function delete(Request $id){
+    public function deleteReservation(Request $id){
         $reservation = Reservation::find($id);
+        
+        foreach($reservation->tickets as $t){
+            $t->delete();
+        };
+
         $reservation->delete();
     }
 }
