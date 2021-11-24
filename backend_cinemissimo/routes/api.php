@@ -38,4 +38,5 @@ Route::get('/projection_tickets/{projection_id}', [ProjectionController::class, 
 Route::get('/reservation_details', [ReservationController::class, 'all_reservations_details']);
 Route::get('/rooms', [RoomController::class, 'list']);
 Route::post('/projection/create', [ProjectionController::class, 'new_projection']);
+Route::delete('/reservation/delete/{id}', [ReservationController::class, 'delete']);
 
