@@ -64,7 +64,7 @@ export default {
     methods:{
         async newProjection(){
             await axios.post("http://localhost:8000/api/projection/create", this.projection)   
-            this.$route.push('/movies/schedule/' + this.projection.movie_id)
+            this.$router.push('/movies/schedule/' + this.projection.movie_id)
         }
     }
 }
