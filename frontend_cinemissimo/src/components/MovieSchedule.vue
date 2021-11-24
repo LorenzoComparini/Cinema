@@ -6,7 +6,6 @@
             <div class="w-full">
                 <div class="flex w-full items-center mb-4 space-x-4">
                     <p class="text-2xl font-semibold text-bianco">{{ movie.title }}</p>    
-                    <p class="px-3 py-1 bg-giallo text-blu-dark font-semibold rounded-lg">3D</p>
                 </div>
             <p class="text-sm italic text-gray-300">Durata: {{ movie.duration }} minuti</p>
             <p class="text-sm italic text-gray-300 mb-6 mt-1">Pubblicazione: {{ movie.year }}</p>
@@ -19,7 +18,10 @@
         <p class="text-2xl text-bianco">Programmazione</p>
         <div v-for="projection in movie.projections" :key="projection.id" class="text-blu-dark flex flex-row w-full py-3 px-3 bg-giallo hover:bg-yellow-400 cursor-pointer items-center mt-4" @click="goToBuyTicket(projection.id)">
             <div class="flex flex-col">
-                <p class="">{{ projection.date }}</p>
+                <div class="flex items-center">
+                    <p class="mr-2">{{ projection.date }}</p>
+                    <p v-if="projection['3d']" class="px-3 py-1 text-bianco bg-blu-dark text-sm font-semibold rounded-lg">3D</p>
+                </div>
                 <p>Posti disponibili: {{ projection.room.seats - projection.tickets_count }}</p>
                 <p>Stanza: {{ projection.room.room_name }}</p>
             </div>
